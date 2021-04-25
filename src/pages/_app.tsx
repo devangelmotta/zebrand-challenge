@@ -1,7 +1,10 @@
+import { configureAppStore } from 'store/configureStore';
+import withRedux from "next-redux-wrapper";
+const store = configureAppStore();
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
+function Main({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 
-export default MyApp
+export default withRedux(store)(Main);
