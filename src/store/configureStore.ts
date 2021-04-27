@@ -9,31 +9,47 @@ export function configureAppStore() {
   const reduxSagaMonitorOptions = {};
   const sagaMiddleware = createSagaMiddleware(reduxSagaMonitorOptions);
   const { run: runSaga } = sagaMiddleware;
-
   // Create the store with saga middleware
   const middlewares = [sagaMiddleware];
-
   const enhancers = [
     createInjectorsEnhancer({
       createReducer,
       runSaga,
     }),
   ];
-
-  const makeStore: MakeStore = (): Store => {
-    const store = configureStore({
-      reducer: createReducer(),
-      middleware: [...getDefaultMiddleware(), ...middlewares],
-      devTools:isServer() && (
-        process.env.NODE_ENV !== 'production' ||
-        process.env.PUBLIC_URL.length > 0),
-      enhancers,
-    });
-
-    return store;
-  };
-
-  
+  const store = configureStore({
+    reducer: createReducer(),
+    middleware: [...getDefaultMiddleware(), ...middlewares],
+    devTools:isServer && (
+      process.env.NODE_ENV !== 'production' ||
+      process.env.PUBLIC_URL.length > 0),
+    enhancers,
+  });
+  const makeStore: MakeStore = (): Store => store;
 
   return makeStore;
+}
+
+export function configureTestStore() {
+  const reduxSagaMonitorOptions = {};
+  const sagaMiddleware = createSagaMiddleware(reduxSagaMonitorOptions);
+  const { run: runSaga } = sagaMiddleware;
+  // Create the store with saga middleware
+  const middlewares = [sagaMiddleware];
+  const enhancers = [
+    createInjectorsEnhancer({
+      createReducer,
+      runSaga,
+    }),
+  ];
+  const store = configureStore({
+    reducer: createReducer(),
+    middleware: [...getDefaultMiddleware(), ...middlewares],
+    devTools:isServer && (
+      process.env.NODE_ENV !== 'production' ||
+      process.env.PUBLIC_URL.length > 0),
+    enhancers,
+  });
+
+  return store;
 }

@@ -19,18 +19,19 @@
     "jsx": "preserve",
     "baseUrl": "./src",
     "paths": {
-      "@/pages/*": ["pages/*"],
-      "@/store/*": ["store/*"],
-      "@/utils/*": ["utils/*"],
-      "@/types/*": ["types/*"],
-      "@/styles/*": ["styles/*"],
+      "/pages/*": ["pages/*"],
+      "/store/*": ["store/*"],
+      "/utils/*": ["utils/*"],
+      "/shared-types/*": ["shared-types/*"],
+      "/styles/*": ["app-styles/*"]
     }
   },
   "include": [
     "next-env.d.ts",
+    "**/*.js",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "next.config.js"  ],
   "exclude": [
     "node_modules"
   ]

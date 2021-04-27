@@ -1,6 +1,6 @@
 import * as slice from '..';
 import { ThemeState, ThemeKeyType } from '../types';
-import { RootState } from 'types';
+import { RootState } from 'shared-types';
 import { themes } from '../../themes';
 import { DefaultTheme } from 'styled-components';
 import { selectTheme, selectThemeKey } from '../selectors';
