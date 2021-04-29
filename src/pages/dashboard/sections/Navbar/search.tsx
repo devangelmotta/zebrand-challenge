@@ -46,9 +46,12 @@ export const Search = () => {
             variants={variantsList}
             initial={true}
             style={{width: '100%'}}>
-              <SearchInput onChange={(evt)=> handleTextSearch(evt.target.value)}
+              <SearchInput
+                placeholder="Search users and repositories" 
+                onChange={(evt)=> handleTextSearch(evt.target.value)}
                 onFocus={()=> handleStartAnimation(true)}
-                onBlur={()=> handleStartAnimation(false)}/>
+                onBlur={()=> handleStartAnimation(false)}
+              />
             </motion.div>
             <RiSearchLine size='40px'/>
         </FormWrapper>

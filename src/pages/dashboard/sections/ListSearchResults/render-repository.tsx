@@ -36,7 +36,7 @@ return(
         flexDirection={medium ? "row": "column"}
         shadow="0px 2px 6px 0px #ddd"
         borderRadius="8px"
-        margin="8px 0px"
+        margin="24px 0px"
     >
         <Title item={item} />
         <RepoInfo item={item}/>

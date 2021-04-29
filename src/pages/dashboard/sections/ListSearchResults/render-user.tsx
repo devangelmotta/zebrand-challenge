@@ -35,10 +35,11 @@ export const RenderUsers = ({item}) =>{
 
     return(
         <Container
-        flexDirection={medium ? "row": "column"}
-        shadow="0px 2px 6px 0px #ddd"
-        borderRadius="8px"
-        margin="8px 0px">
+            flexDirection={medium ? "row": "column"}
+            shadow="0px 2px 6px 0px #ddd"
+            borderRadius="8px"
+            margin="24px 0px"
+        >
             <Row 
                 flexDirection="row"
                 justifyContent="flex-start"

@@ -33,7 +33,7 @@ export const ScopeSelected = ({updateStateSelecting, stateSelecting, stateSelect
             <Text
             color="#fff"
             padding="8px 16px"
-            fontWeight="regular"
+            fontWeight="400"
             fontSize="1.2rem">
                 {getStringByTypeScope(stateSelected)}
             </Text>
@@ -72,7 +72,7 @@ export const ScopeSelected = ({updateStateSelecting, stateSelecting, stateSelect
             <Text
             color="#000"
             padding="8px 16px"
-            fontWeight="regular"
+            fontWeight="200"
             fontSize="1.2rem">
                 {getStringByTypeScope(
                     scopeSearchType.USER
@@ -88,7 +88,7 @@ export const ScopeSelected = ({updateStateSelecting, stateSelecting, stateSelect
             <Text
             color="#000"
             padding="8px 16px"
-            fontWeight="regular"
+            fontWeight="200"
             fontSize="1.2rem">
                 {getStringByTypeScope(
                     scopeSearchType.REPOSITORIES
@@ -104,7 +104,7 @@ export const ScopeSelected = ({updateStateSelecting, stateSelecting, stateSelect
             <Text
             color="#000"
             padding="8px 16px"
-            fontWeight="regular"
+            fontWeight="200"
             fontSize="1.2rem">
                 {getStringByTypeScope(
                     scopeSearchType.ALL
