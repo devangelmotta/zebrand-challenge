@@ -3,6 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Mukta', sans-serif;
+  background: linear-gradient(to right, #ddd6f3, #faaca8)
 }
 
 a {

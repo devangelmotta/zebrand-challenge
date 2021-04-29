@@ -8,6 +8,7 @@ import { Search } from './search';
 import LinkUser from 'next/link';
 import { FaUserCircle } from "react-icons/fa";
 import { BadgedFilters, ScopeSelected } from './render-filters-search';
+import { UserInfo } from '../CurrentUser';
 
 const Nav = () => {
   const initialSelectState = scopeSearchType.ALL;
@@ -16,16 +17,8 @@ const Nav = () => {
 
   return(
     <Column margin="0 20px">
-      <Row flexDirection="row" height="40px" margin="16px 0 0 0">
-            <LinkUser
-                href="/user">
-                <Container 
-                  width="auto"
-                  padding="0px 20px 0px 20px">
-                  <FaUserCircle 
-                    size='30px'/>
-                </Container>
-            </LinkUser>
+      <Row flexDirection="row" height="40px" margin="32px 0 0 0">
+            <UserInfo/>
             <Search/>
         </Row>
         <Row 
@@ -48,8 +41,3 @@ const Nav = () => {
   )};
 
 export default Nav;
-
-const SearchScope = styled(Row)`
-  overflow-x: hidden;
-  overflow-y: hidden;
-`;

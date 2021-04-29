@@ -12,7 +12,8 @@ const Container = styled.div`
   max-width: ${props => props.maxWidth || "none"};
   min-width: ${props => props.minWidth || "none"};
   height: ${props => props.height || "auto"};
-  max-height: ${props => props.maxHeight || "none"};
+  min-height: ${props => props.maxHeight || "none"};
+  max-height: ${props => props.minHeight || "none"};
   background-color: ${props => props.backgroundColor || "transparent"};
   background: ${props => props.backgroundColor || ""};
   padding: ${props => props.padding || "0 0 0 0"};
@@ -34,6 +35,7 @@ interface Props {
   readonly alignItems? : string,
   readonly width? : string,
   readonly height? : string,
+  readonly minHeight? : string,
   readonly maxHeight? : string,
   readonly minWidth? : string,
   readonly maxWidth? : string,

@@ -126,11 +126,11 @@ const AnimatedRenderListRepos = ({repositories, openRepositories}) =>{
 const variantsList = {
     open: { 
         opacity: 1,
-         y: -10,
+         y: -20,
          x: 0,
          transition: {
             type: "spring",
-            stiffness: 40,
+            stiffness: 20,
             restDelta: 2
           }},
     closed: { 

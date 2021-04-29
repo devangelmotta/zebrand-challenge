@@ -33,8 +33,10 @@ const Dashboard = ({github_token}) => {
 
     return(
         <ApolloProvider client={apolloClient}>
-            <Container justifyContent="center">
-                <Container maxWidth={medium ? '1600px' : 'none'}>
+            <Container 
+            minHeight={'100%'}
+            justifyContent="center">
+                <Container maxWidth={medium ? '1600px' : 'none'} >
                     <Row flexDirection="row">
                         <Navbar/>
                     </Row>
