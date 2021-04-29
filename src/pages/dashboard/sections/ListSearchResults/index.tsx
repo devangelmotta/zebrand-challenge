@@ -3,6 +3,7 @@ import Container from 'components/Container';
 import Row from 'components/Container';
 import Text from 'components/Text';
 import Divider from 'components/Divider';
+import Img from 'components/Img';
 import { TiArrowMinimiseOutline, TiArrowMaximiseOutline } from "react-icons/ti";
 import { scopeSearchType } from 'pages/dashboard/slice/types';
 import { useSelector } from 'react-redux';
@@ -53,6 +54,8 @@ export const ListItems = () => {
                     openRepositories={openRepositories}
                 />
             </Container>}
+            {isEmpty(users) && isEmpty(repositories) &&
+            <RenderSearchNotFound />}
         </Container>
     )
 }
@@ -71,7 +74,7 @@ const RenderHeaderUserScope = ({handleOpenUsers, openUsers}) =>(
     >
         <Text fontWeight="regular" fontSize="1.5rem">Users</Text>
         <ArrowByOpenStatus state={openUsers}/>
-        <Divider width="100%" margin="0 16px 0 0"/>
+        <Divider width="100%"  color="#606060" margin="0 16px 0 0"/>
     </Row>
 )
 
@@ -83,7 +86,7 @@ const RenderHeaderRepoScope = ({handleOpenRepositories, openRepositories}) =>(
     >
         <Text fontWeight="regular" fontSize="1.5rem">Repositories</Text>
         <ArrowByOpenStatus state={openRepositories}/>
-        <Divider width="100%" margin="0 16px 0 0"/>
+        <Divider width="100%" color="#606060" margin="0 16px 0 0"/>
     </Row>
 )
 
@@ -123,6 +126,18 @@ const AnimatedRenderListRepos = ({repositories, openRepositories}) =>{
             
 )}
 
+const RenderSearchNotFound = () =>(
+    <Container
+    margin="24px 0px"
+    justifyContent="center">
+        <Img 
+            src="/not_search.svg"
+            width='200px' height='200px'
+        />
+        <Text>Nothing to see</Text>
+    </Container>
+    
+)
 const variantsList = {
     open: { 
         opacity: 1,

@@ -36,7 +36,7 @@ export const RenderUsers = ({item}) =>{
     return(
         <Container
             flexDirection={medium ? "row": "column"}
-            shadow="0px 2px 6px 0px #ddd"
+            shadow="0px 2px 6px 0px #606060"
             borderRadius="8px"
             margin="24px 0px"
         >
@@ -74,7 +74,6 @@ const HeaderInfo = ({item})=>(
         justifyContent="flex-start"
     >
         <Text 
-            whiteSpace="nowrap"
             fontWeight="bold"
             fontSize="1.2rem"
             margin="0px 8px"
@@ -83,7 +82,6 @@ const HeaderInfo = ({item})=>(
         </Text>
         <Badge color="light" pill>
             <Text 
-                whiteSpace="nowrap"
                 color="#404040"
                 fontSize="1rem"
                 padding="4px 4px"
@@ -116,7 +114,7 @@ const Email = ({item}) => (
         padding="0 8px"
         justifyContent="center"
     >
-        <Text whiteSpace="nowrap">Email: {item.email ? item.email : 'Private email'}</Text>
+        <Text >Email: {item.email ? item.email : 'Private email'}</Text>
     </Column>
 )
 
@@ -168,7 +166,7 @@ const SecondaryInfo = ({item, medium, large})=>(
         flexDirection="row"
         justifyContent="flex-start"
         padding="0px 8px 0px 0px">
-            <RiGitRepositoryCommitsLine size={18}/>
+            <RiGitRepositoryCommitsLine size={30}/>
             <Text whiteSpace="nowrap" padding="0 0 0 4px">{item.repositories}</Text>
         </Row>
         <Text whiteSpace="nowrap" fontSize="1rem">

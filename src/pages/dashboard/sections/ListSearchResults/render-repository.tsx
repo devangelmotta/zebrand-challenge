@@ -34,7 +34,7 @@ export const RenderRepository = ({item}) => {
 return(
     <Container
         flexDirection={medium ? "row": "column"}
-        shadow="0px 2px 6px 0px #ddd"
+        shadow="0px 2px 6px 0px #606060"
         borderRadius="8px"
         margin="24px 0px"
     >
@@ -52,8 +52,7 @@ const Title = ({item}) =>(
         flexDirection="row"
         justifyContent="flex-start"
         padding="8px 0px 0px 16px">
-        <RiGitRepositoryCommitsLine size={25}
-    />
+        <RiGitRepositoryCommitsLine size={30}/>
         <Text 
             fontWeight="bold"
             fontSize="1.2rem"

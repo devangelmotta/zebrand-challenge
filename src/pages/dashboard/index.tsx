@@ -8,7 +8,7 @@ import Navbar from './sections/Navbar';
 import { ListItems } from './sections/ListSearchResults';
 import { useMediaQuery } from 'utils/media-query';
 import { isServer } from 'utils/ssr';
-
+import Divider from 'components/Divider';
 const Dashboard = ({github_token}) => {
     const [medium, updateMedium] = React.useState(false);
     const [large, updateLarge] = React.useState(false);
@@ -35,13 +35,16 @@ const Dashboard = ({github_token}) => {
         <ApolloProvider client={apolloClient}>
             <Container 
             minHeight={'100%'}
-            justifyContent="center">
+            justifyContent="center"
+            flexDirection="row">
+                <Divider height="100%" color="#000" width="2px"/>
                 <Container maxWidth={medium ? '1600px' : 'none'} >
                     <Row flexDirection="row">
                         <Navbar/>
                     </Row>
                     <ListItems/>
                 </Container>
+                <Divider height="100%"/>
             </Container>
         </ApolloProvider>
     )

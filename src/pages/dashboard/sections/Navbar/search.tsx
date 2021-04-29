@@ -81,7 +81,7 @@ const FormWrapper = styled(Form)`
 const variantsList = {
   open: { 
       width: '100%',
-       x: 10,
+       x: 0,
        transition: {
           type: "spring",
           stiffness: 40,
