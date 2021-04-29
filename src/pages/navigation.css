@@ -1,0 +1,14 @@
+.navigation-enter {
+    opacity: 0;
+  }
+  .navigation-enter-active {
+    opacity: 1;
+    transition: opacity 200ms ease-in;
+  }
+  .navigation-exit {
+    opacity: 1;
+  }
+  .navigation-exit-active {
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+  }

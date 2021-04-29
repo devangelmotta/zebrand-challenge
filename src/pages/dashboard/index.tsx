@@ -1,11 +1,53 @@
+import * as React from 'react';
+import { ApolloProvider } from '@apollo/client';
+import { useApollo } from 'GraphQl/setup.client';
+import cookies from 'next-cookies';
+import Container from 'components/Container';
 import Row from 'components/Container';
 import Navbar from './sections/Navbar';
+import { ListItems } from './sections/ListSearchResults';
+import { useMediaQuery } from 'utils/media-query';
+import { isServer } from 'utils/ssr';
 
-const Dasboard = () => (
-    <Row flexDirection="row">
-        <Navbar/>
-    </Row>
+const Dashboard = ({github_token}) => {
+    const [medium, updateMedium] = React.useState(false);
+    const [large, updateLarge] = React.useState(false);
+    const apolloClient = useApollo(github_token)
+    function updateScreenSizes(){
+        updateMedium(
+            useMediaQuery("small")
+        );
+        updateLarge(
+            useMediaQuery("medium")
+        );
+    }
+    
+    React.useEffect(()=>{
+        if(!isServer) {
+            updateScreenSizes()
+            window.addEventListener("resize", () => {
+                updateScreenSizes()
+            });
+        }
+    })
 
-)
+    return(
+        <ApolloProvider client={apolloClient}>
+            <Container justifyContent="center">
+                <Container maxWidth={medium ? '1600px' : 'none'}>
+                    <Row flexDirection="row">
+                        <Navbar/>
+                    </Row>
+                    <ListItems/>
+                </Container>
+            </Container>
+        </ApolloProvider>
+    )
+}
 
-export default Dasboard;
+Dashboard.getInitialProps =  (ctx) => {
+    const { github_token } = cookies(ctx);
+    return { github_token }
+  }
+
+export default Dashboard;

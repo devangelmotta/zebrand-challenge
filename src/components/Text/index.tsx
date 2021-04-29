@@ -2,8 +2,9 @@ import React, { memo } from 'react';
 import styled from 'styled-components';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Text = styled.p`
-    color: ${(props: Props) => props.color || "#fff"};
+const Text = styled.span`
+    color: ${(props: Props) => props.color};
+    white-space: ${(props: Props) => props.whiteSpace};
     font-size: ${props => props.fontSize || "1rem"};
     font-family: ${props => props.fontFamily || "'Mukta', sans-serif"};
     font-weight: ${props => props.fontWeight || '100'};
@@ -26,6 +27,8 @@ interface Props {
     readonly padding? : string,
     readonly margin? : string,
     readonly zIndex?: string|number,
+    readonly theme?: any,
+    readonly whiteSpace: string
   }
 
 export default memo(Text);
